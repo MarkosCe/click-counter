@@ -1,7 +1,7 @@
 import './App.css';
 import Boton from './componentes/Boton';
 import Contador from './componentes/Contador';
-import counterClicLogo from './imagenes/logo-cs.png';
+import counterClicLogo from './imagenes/logo-cs2.png';
 import { useState } from 'react';
 
 function App() {
