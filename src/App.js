@@ -1,16 +1,20 @@
 import './App.css';
 import Boton from './componentes/Boton';
+import Contador from './componentes/Contador';
 import counterClicLogo from './imagenes/logo-cs.png';
+import { useState } from 'react';
 
 function App() {
 
+  const [numClics, setNumClics] = useState(0); 
+
   const manejarClic = () => {
-    console.log('Clic');
-  }
+    setNumClics(numClics + 1);
+  };
 
   const reiniciarContador = () => {
-    console.log('Reiniciar');
-  }
+    setNumClics(0);
+  };
 
   return (
     <div className='App'>
@@ -18,17 +22,20 @@ function App() {
         <img 
           className='counterclic-logo'
           src={counterClicLogo}
-          alt='Logo de freecodecamp'/>
+          alt='Logo de counterclic' />
       </div>
       <div className='contenedor-principal'>
+        <Contador 
+          numClics={numClics}
+        />
         <Boton
           texto='Clic'
           esBotonClic={true}
-          manejarClic={manejarClic}/>
+          manejarClic={manejarClic} />
         <Boton
           texto='Reiniciar'
           esBotonClic={false}
-          manejarClic={reiniciarContador}/>
+          manejarClic={reiniciarContador} />
       </div>
     </div>
   );
